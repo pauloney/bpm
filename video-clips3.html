@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berkeley Problems - Video Clips</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --text-color: #2d3436;
+            --play-btn-color: #ff0000;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        h1 {
+            font-weight: 800;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            letter-spacing: -0.05em;
+            color: #2d3436;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .video-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .video-thumb {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+        
+        .video-card:hover .video-thumb { opacity: 1; }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 68px;
+            height: 48px;
+            background-color: rgba(33, 33, 33, 0.8);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
+            z-index: 2;
+        }
+
+        .play-button::before {
+            content: "";
+            border-style: solid;
+            border-width: 10px 0 10px 16px;
+            border-color: transparent transparent transparent white;
+        }
+
+        .video-card:hover .play-button { background-color: var(--play-btn-color); }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            z-index: 10;
+        }
+
+        .video-info { padding: 1rem; text-align: center; }
+        .video-title { font-weight: 600; font-size: 1rem; color: #2d3436; margin-bottom: 0.25rem; }
+        .video-meta { font-size: 0.85rem; color: #636e72; }
+    </style>
+</head>
+<body>
+
+    <h1>Video Clips</h1>
+
+    <div class="grid-container">
+
+        <div class="video-card" onclick="loadVideo(this, 'ti55C6gmhJo')">
+            <div class="video-wrapper">
+                <img class="video-thumb" src="https://img.youtube.com/vi/ti55C6gmhJo/hqdefault.jpg" alt="Thumbnail">
+                <div class="play-button"></div>
+            </div>
+            <div class="video-info">
+                <div class="video-title">Berkeley Math 1</div>
+                <div class="video-meta">Abstract Algebra Review</div>
+            </div>
+        </div>
+    
+        <div class="video-card" onclick="loadVideo(this, '3ol680KInck')">
+            <div class="video-wrapper">
+                <img class="video-thumb" src="https://img.youtube.com/vi/3ol680KInck/hqdefault.jpg" alt="Thumbnail">
+                <div class="play-button"></div>
+            </div>
+            <div class="video-info">
+                <div class="video-title">Berkeley Math 2</div>
+                <div class="video-meta">Complex Analysis Problem</div>
+            </div>
+        </div>
+    
+        <div class="video-card" onclick="loadVideo(this, 'qtghXGOfIxo')">
+            <div class="video-wrapper">
+                <img class="video-thumb" src="https://img.youtube.com/vi/qtghXGOfIxo/hqdefault.jpg" alt="Thumbnail">
+                <div class="play-button"></div>
+            </div>
+            <div class="video-info">
+                <div class="video-title">Berkeley Math 3</div>
+                <div class="video-meta">Topology Solutions</div>
+            </div>
+        </div>
+        
+        <div class="video-card" onclick="loadVideo(this, 'ti55C6gmhJo')">
+            <div class="video-wrapper">
+                <img class="video-thumb" src="https://img.youtube.com/vi/ti55C6gmhJo/hqdefault.jpg" alt="Thumbnail">
+                <div class="play-button"></div>
+            </div>
+            <div class="video-info">
+                <div class="video-title">Berkeley Math 4</div>
+                <div class="video-meta">Review Session</div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function loadVideo(card, videoId) {
+            const wrapper = card.querySelector('.video-wrapper');
+            
+            // 1. Check if already loaded to prevent reload
+            if (wrapper.querySelector('iframe')) return;
+
+            // 2. Create iframe
+            const iframe = document.createElement('iframe');
+            
+            // 3. SECURE URL FORMAT
+            // We remove 'autoplay=1' which can sometimes block local files
+            // We add 'rel=0' to show related videos from same channel only
+            iframe.src = `https://www.youtube.com/embed/${videoId}?rel=0`;
+            
+            iframe.title = "YouTube video player";
+            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+            iframe.allowFullscreen = true;
+
+            // 4. Clear the thumbnail and button
+            wrapper.innerHTML = ''; 
+            
+            // 5. Append the iframe
+            wrapper.appendChild(iframe);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berkeley Problems - Video Clips</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --text-color: #2d3436;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        h1 {
+            font-weight: 800;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            letter-spacing: -0.05em;
+            color: #2d3436;
+        }
+
+        .grid-container {
+            display: grid;
+            /* Responsive grid: minimum width 320px per video card */
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .video-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        /* Responsive Iframe Container (16:9 Aspect Ratio) */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            background: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-info {
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .video-title {
+            font-weight: 600;
+            font-size: 1rem;
+            color: #2d3436;
+            margin-bottom: 0.25rem;
+        }
+
+        .video-meta {
+            font-size: 0.85rem;
+            color: #636e72;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Video Clips</h1>
+
+    <div class="grid-container">
+
+        <div class="video-card">
+            <div class="video-wrapper">
+                <iframe 
+                    src="https://www.youtube.com/embed/ti55C6gmhJo" 
+                    title="YouTube video player" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="video-info">
+                <div class="video-title">XXXXXXXXX</div>
+                <div class="video-meta">Video Description</div>
+            </div>
+        </div>
+    
+        <div class="video-card">
+            <div class="video-wrapper">
+                <iframe 
+                    src="https://www.youtube.com/embed/3ol680KInck" 
+                    title="YouTube video player" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="video-info">
+                <div class="video-title">XXXXXXXXX</div>
+                <div class="video-meta">Video Description</div>
+            </div>
+        </div>
+    
+        <div class="video-card">
+            <div class="video-wrapper">
+                <iframe 
+                    src="https://www.youtube.com/embed/qtghXGOfIxo" 
+                    title="YouTube video player" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="video-info">
+                <div class="video-title">XXXXXXXXX</div>
+                <div class="video-meta">Video Description</div>
+            </div>
+        </div>
+    
+        <div class="video-card">
+            <div class="video-wrapper">
+                <iframe 
+                    src="https://www.youtube.com/embed/ti55C6gmhJo" 
+                    title="YouTube video player" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="video-info">
+                <div class="video-title">XXXXXXXXX</div>
+                <div class="video-meta">Video Description</div>
+            </div>
+        </div>
+    
+        <div class="video-card">
+            <div class="video-wrapper">
+                <iframe 
+                    src="https://www.youtube.com/embed/3ol680KInck" 
+                    title="YouTube video player" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="video-info">
+                <div class="video-title">XXXXXXXXX</div>
+                <div class="video-meta">Video Description</div>
+            </div>
+        </div>
+    
+        <div class="video-card">
+            <div class="video-wrapper">
+                <iframe 
+                    src="https://www.youtube.com/embed/qtghXGOfIxo" 
+                    title="YouTube video player" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="video-info">
+                <div class="video-title">XXXXXXXXX</div>
+                <div class="video-meta">Video Description</div>
+            </div>
+        </div>
+        
+    </div>
+
+</body>
+</html>

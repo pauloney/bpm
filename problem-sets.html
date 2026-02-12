@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berkeley Problems in Mathematics - Archive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --text-color: #2d3436;
+        }
+
+        /* Kelvin Color Temperature Scale (1000K - 10000K)
+           Based on the provided chart:
+           1 = 1000K (Red)
+           ...
+           10 = 10000K (Deep Blue)
+        */
+        .k-1  { background-color: #ff3a1d; color: white; } /* 1000K - Candle */
+        .k-2  { background-color: #ff7800; color: white; } /* 2000K - Sunrise */
+        .k-3  { background-color: #ffbf00; color: #2d3436; } /* 3000K - Lightbulb */
+        .k-4  { background-color: #ffe068; color: #2d3436; } /* 4000K - Moonlight */
+        .k-5  { background-color: #fff2c4; color: #2d3436; } /* 5000K - Midday Sun */
+        .k-6  { background-color: #e3f2ff; color: #2d3436; } /* 6000K - Cloudy */
+        .k-7  { background-color: #bae1ff; color: #2d3436; } /* 7000K */
+        .k-8  { background-color: #8ecaff; color: #2d3436; } /* 8000K */
+        .k-9  { background-color: #55aaff; color: white; }   /* 9000K */
+        .k-10 { background-color: #1e88ff; color: white; }   /* 10000K - Blue Sky */
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        h1 {
+            font-weight: 800;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            letter-spacing: -0.05em;
+            color: #2d3436;
+        }
+
+        .grid-container {
+            display: grid;
+            /* Changed minmax to 90px to create a rectangular shape naturally */
+            grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+            gap: 10px;
+            width: 100%;
+            max-width: 1100px;
+        }
+
+        .tile {
+            /* Removed aspect-ratio:1 to allow rectangular shape */
+            padding: 12px 8px; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            cursor: default;
+            user-select: none;
+            white-space: nowrap; /* Keeps text on one line */
+        }
+
+        .tile:hover {
+            transform: translateY(-3px);
+            z-index: 10;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Berkeley Problems Archive</h1>
+
+    <div class="grid-container">
+        <div class="tile k-4">Sp 1977</div>
+        <div class="tile k-9">Su 1977</div>
+        <div class="tile k-2">Fa 1977</div>
+        <div class="tile k-7">Sp 1978</div>
+        <div class="tile k-1">Su 1978</div>
+        <div class="tile k-6">Fa 1978</div>
+        <div class="tile k-3">Sp 1979</div>
+        <div class="tile k-8">Su 1979</div>
+        <div class="tile k-5">Fa 1979</div>
+        
+        <div class="tile k-10">Sp 1980</div>
+        <div class="tile k-2">Su 1980</div>
+        <div class="tile k-7">Fa 1980</div>
+        <div class="tile k-6">Sp 1981</div>
+        <div class="tile k-4">Su 1981</div>
+        <div class="tile k-9">Fa 1981</div>
+        <div class="tile k-1">Sp 1982</div>
+        <div class="tile k-8">Su 1982</div>
+        <div class="tile k-3">Fa 1982</div>
+        <div class="tile k-5">Sp 1983</div>
+        <div class="tile k-7">Su 1983</div>
+        <div class="tile k-2">Fa 1983</div>
+        <div class="tile k-9">Sp 1984</div>
+        <div class="tile k-6">Su 1984</div>
+        <div class="tile k-4">Fa 1984</div>
+        <div class="tile k-8">Sp 1985</div>
+        <div class="tile k-1">Su 1985</div>
+        <div class="tile k-10">Fa 1985</div>
+        <div class="tile k-3">Sp 1986</div>
+        <div class="tile k-7">Fa 1986</div>
+        <div class="tile k-5">Sp 1987</div>
+        <div class="tile k-2">Fa 1987</div>
+        <div class="tile k-9">Sp 1988</div>
+        <div class="tile k-6">Fa 1988</div>
+        <div class="tile k-4">Sp 1989</div>
+        <div class="tile k-8">Fa 1989</div>
+
+        <div class="tile k-1">Sp 1990</div>
+        <div class="tile k-7">Fa 1990</div>
+        <div class="tile k-3">Sp 1991</div>
+        <div class="tile k-10">Fa 1991</div>
+        <div class="tile k-6">Sp 1992</div>
+        <div class="tile k-2">Fa 1992</div>
+        <div class="tile k-8">Sp 1993</div>
+        <div class="tile k-5">Fa 1993</div>
+        <div class="tile k-9">Sp 1994</div>
+        <div class="tile k-4">Fa 1994</div>
+        <div class="tile k-1">Sp 1995</div>
+        <div class="tile k-7">Fa 1995</div>
+        <div class="tile k-3">Sp 1996</div>
+        <div class="tile k-6">Fa 1996</div>
+        <div class="tile k-8">Sp 1997</div>
+        <div class="tile k-2">Fa 1997</div>
+        <div class="tile k-10">Sp 1998</div>
+        <div class="tile k-5">Fa 1998</div>
+        <div class="tile k-4">Sp 1999</div>
+        <div class="tile k-9">Fa 1999</div>
+
+        <div class="tile k-7">Sp 2000</div>
+        <div class="tile k-1">Fa 2000</div>
+        <div class="tile k-6">Sp 2001</div>
+        <div class="tile k-3">Fa 2001</div>
+        <div class="tile k-8">Sp 2002</div>
+        <div class="tile k-2">Fa 2002</div>
+        <div class="tile k-9">Sp 2003</div>
+        <div class="tile k-5">Fa 2003</div>
+        <div class="tile k-4">Sp 2004</div>
+        <div class="tile k-7">Fa 2004</div>
+        <div class="tile k-1">Sp 2005</div>
+        <div class="tile k-10">Fa 2005</div>
+        <div class="tile k-6">Sp 2006</div>
+        <div class="tile k-3">Fa 2006</div>
+        <div class="tile k-8">Sp 2007</div>
+        <div class="tile k-2">Fa 2007</div>
+        <div class="tile k-9">Sp 2008</div>
+        <div class="tile k-5">Fa 2008</div>
+        <div class="tile k-4">Sp 2009</div>
+        <div class="tile k-7">Fa 2009</div>
+
+        <div class="tile k-1">Sp 2010</div>
+        <div class="tile k-6">Fa 2010</div>
+        <div class="tile k-3">Sp 2011</div>
+        <div class="tile k-8">Fa 2011</div>
+        <div class="tile k-2">Sp 2012</div>
+        <div class="tile k-9">Fa 2012</div>
+        <div class="tile k-5">Sp 2013</div>
+        <div class="tile k-4">Fa 2013</div>
+        <div class="tile k-7">Sp 2014</div>
+        <div class="tile k-1">Fa 2014</div>
+        <div class="tile k-6">Sp 2015</div>
+        <div class="tile k-3">Fa 2015</div>
+        <div class="tile k-8">Sp 2016</div>
+        <div class="tile k-2">Fa 2016</div>
+        <div class="tile k-9">Sp 2017</div>
+        <div class="tile k-5">Fa 2017</div>
+        <div class="tile k-4">Sp 2018</div>
+        <div class="tile k-7">Fa 2018</div>
+        <div class="tile k-1">Sp 2019</div>
+        <div class="tile k-6">Fa 2019</div>
+
+        <div class="tile k-3">Sp 2020</div>
+        <div class="tile k-8">Fa 2020</div>
+        <div class="tile k-2">Sp 2021</div>
+        <div class="tile k-9">Fa 2021</div>
+        <div class="tile k-5">Sp 2022</div>
+        <div class="tile k-4">Fa 2022</div>
+        <div class="tile k-7">Sp 2023</div>
+        <div class="tile k-1">Fa 2023</div>
+        <div class="tile k-6">Sp 2024</div>
+        <div class="tile k-3">Fa 2024</div>
+        <div class="tile k-8">Sp 2025</div>
+        <div class="tile k-2">Fa 2025</div>
+        <div class="tile k-9">Sp 2026</div>
+    </div>
+
+</body>
+</html>
