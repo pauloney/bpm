@@ -1,1 +1,1 @@
-File for the Additional material fr BPM for Springer-Verlag.
+File for the Additional material for BPM for Springer-Verlag.
