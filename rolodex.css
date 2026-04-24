@@ -1,0 +1,9 @@
+.problem-number {
+    font-family: 'Inter', sans-serif;
+    font-weight: normal;
+}
+
+.problem-number.is-bold {
+    font-weight: 700;
+    color: #000;
+}
