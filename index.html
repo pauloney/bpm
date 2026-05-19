@@ -11,13 +11,14 @@
         :root {
             --bg-color: #f8f9fa;
             --text-color: #2d3436;
-            
+
             /* Tile Palette */
             --tile-1: #6c5ce7; /* Purple */
             --tile-2: #0984e3; /* Blue */
             --tile-3: #00b894; /* Green */
             --tile-4: #e17055; /* Orange */
             --tile-5: #d63031; /* Red */
+            --tile-6: #e84393; /* Pink */
         }
 
         * {
@@ -100,18 +101,18 @@
             font-size: 1rem;
             font-weight: 400;
             margin-top: 0;
-            
+
             /* Hidden state */
             max-height: 0;
             opacity: 0;
             overflow: hidden;
-            
+
             /* Smooth reveal animation */
             transition: max-height 0.4s ease, opacity 0.4s ease, margin-top 0.4s ease;
         }
 
         /* --- HOVER EFFECTS --- */
-        
+
         .tile:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(0,0,0,0.2);
@@ -129,6 +130,7 @@
         .tile:nth-child(3) { background-color: var(--tile-3); }
         .tile:nth-child(4) { background-color: var(--tile-4); }
         .tile:nth-child(5) { background-color: var(--tile-5); }
+        .tile:nth-child(6) { background-color: var(--tile-6); }
 
         /* Responsive Layout */
         @media (min-width: 768px) {
@@ -141,13 +143,13 @@
             .tile:nth-child(1) {
                 grid-column: span 2;
                 grid-row: span 2;
-                height: auto; 
+                height: auto;
             }
 
             .tile:nth-child(1) h2 {
                 font-size: 3.5rem;
             }
-            
+
             /* Larger text for the large tile */
             .tile:nth-child(1) .description {
                 font-size: 1.25rem;
@@ -163,7 +165,7 @@
 
     </style>
 </head>
-<body>
+    <body>
 
     <header>
         <h1>Berkeley Problems in Mathematics</h1>
@@ -194,6 +196,11 @@
         <a href="rolodex.html" class="tile">
             <h2>Index</h2>
             <p class="description">The main index of each problem</p>
+        </a>
+
+        <a href="http://booksinbytes.com/bpm.html" class="tile">
+            <h2>Build your own</h2>
+            <p class="description">Generate a custom problem set exam</p>
         </a>
     </main>
 
